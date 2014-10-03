@@ -13,7 +13,7 @@ a:hover {background:none}
 img {border:none}
 
 header {position:fixed; left:0; top:0; z-index:10; width:100%; background:#09030c}
-.header-inner {position:relative; width:940px; margin:0 auto}
+.header-inner {position:relative; width:940px; margin:0 auto; height:54px}
 .header-inner:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
 nav {float:left; font-weight:normal; font-family:ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; padding:18px 0 0 0}
@@ -24,7 +24,7 @@ nav ul li a {background:none; color:#fc4c02}
 nav ul li a:hover {color:#cf2700}
 nav ul li.active a {color:#fff}
 
-.header-fund {float:right; line-height:0}
+.header-fund {float:right; line-height:0; padding:10px 0 0 0}
 .header-fund a {background:none}
 
 .header-social {float:right; padding:13px 62px 0 0}
@@ -174,12 +174,37 @@ form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .news-ctrl a.active {background:#f60800}
 .news-all {position:absolute; right:10px; top:0; padding:0 20px; background:#fff; text-transform:uppercase; height:31px; line-height:31px; font-weight:normal; font-family:ProximaNovaRegular, sans-serif}
 
-#partners {height:611px; position:relative; background:#080104 url(../images/partners-bg.jpg) no-repeat center top}
-.partners-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; text-align:center; padding:71px 0 0 0}
-.partners-title:before,
-.partners-title:after {content:""; display:inline-block; vertical-align:top; width:28px; height:27px; background:url(../images/content-h1.png); margin:2px 19px 0 19px}
-.partners-list {font-size:0; line-height:0; letter-spacing:-1px; width:960px; margin:0 auto; padding:58px 0 62px 0; text-align:center}
-.partners-list img {display:inline-block; vertical-align:middle; margin:0 48px}
-.partners-sep {width:940px; margin:0 auto; height:2px; background:#fff; opacity:.1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=10)}
-.partners-link {line-height:0; text-align:center; padding:67px 0 0 0}
-.partners-text {font:30px/30px ProximaNovaRegular, sans-serif; text-align:center; color:#fff; text-transform:uppercase; padding:21px 0 0 0}
+#partners {position:relative}
+
+.partners-org {height:468px; background:#080104 url(../images/partners-bg.jpg) no-repeat center top}
+.partners-org-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; text-align:center; padding:71px 0 0 0}
+.partners-org-title:before,
+.partners-org-title:after {content:""; display:inline-block; vertical-align:top; width:28px; height:27px; background:url(../images/content-h1.png); margin:2px 19px 0 19px}
+.partners-org-list {width:960px; margin:0 auto; padding:58px 0 0 0}
+.partners-org-list:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
+.partners-org-item {float:left; width:260px}
+.partners-org-item:first-child {padding:0 0 0 110px}
+.partners-org-item-logo {line-height:0; height:186px}
+.partners-org-item-logo a {background:none}
+.partners-org-item-logo img {position:relative}
+.partners-org-1 {left:-1px}
+.partners-org-2 {left:-3px; top:49px}
+.partners-org-3 {left:37px; top:10px}
+.partners-org-item-name {color:#fff; font:14px/18px ProximaNovaRegular, sans-serif; text-transform:uppercase}
+
+.partners-support {width:960px; margin:0 auto; padding:72px 0 0 0}
+.partners-support-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#000; text-align:center}
+.partners-support-title:before,
+.partners-support-title:after {content:""; display:inline-block; vertical-align:top; width:28px; height:27px; background:url(../images/content-h1.png); margin:2px 19px 0 19px}
+.partners-support-list {text-align:center; font-size:0; line-height:0; letter-spacing:-1px; padding:46px 0 0 0}
+.partners-support-list a {background:none}
+.partners-support-list img {vertical-align:middle; margin:10px 20px}
+
+.partners-info {width:960px; margin:0 auto; padding:66px 0 0 0}
+
+.partners-part {width:960px; margin:0 auto; padding:73px 0 64px 0}
+.partners-part img {position:relative; margin-left:10px; margin-right:10px; -moz-border-radius:70px; -webkit-border-radius:70px; border-radius:70px; behavior:url(./js/PIE.htc)}
+
+.partners-welcome {height:217px; background:#080104 url(../images/partners-welcome-bg.jpg) no-repeat center top}
+.partners-link {line-height:0; text-align:center; padding:59px 0 0 0}
+.partners-text {font:30px/30px ProximaNovaRegular, sans-serif; text-align:center; color:#fff; text-transform:uppercase; padding:27px 0 0 0}
