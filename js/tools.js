@@ -69,4 +69,8 @@
         });
     });
 
+    $(window).load(function() {
+        $('.map-inner').css({'margin': '-' + ($('.map-inner').height() / 2) + 'px 0 0 -' + ($('.map-inner').width() / 2) + 'px'});
+    });
+
 })(jQuery);

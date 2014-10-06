@@ -79,11 +79,12 @@ footer {min-width:1000px; width:100%; position:relative; margin-top:-522px}
 
 .footer-map {height:342px; position:relative; width:100%}
 #map {height:342px}
-.map-inner {position:absolute; left:50%; width:886px; top:133px; margin-left:-443px; font-size:18px; line-height:24px}
-.map-address {float:left; width:313px; padding:15px 0 18px 40px; background:#fff; position:relative}
-.map-address:after {content:""; display:block; position:absolute; width:54px; height:53px; left:-27px; top:50%; margin-top:-27px; background:url(../images/map-address.png)}
-.map-phone {float:left; padding:15px 0 18px 30px; width:236px; background:#fff; margin:0 0 0 1px}
-.map-email {float:left; padding:15px 0 18px 30px; width:235px; background:#fff; margin:0 0 0 1px}
+.map-inner {position:absolute; left:50%; top:50%; font-size:18px; line-height:24px}
+.map-inner:after {content:""; display:block; position:absolute; width:54px; height:53px; left:-27px; top:50%; margin-top:-27px; background:url(../images/map-address.png)}
+.map-inner-container {display:table; border-spacing:1px}
+.map-address {display:table-cell; vertical-align:top; padding:15px 30px 18px 40px; background:#fff; position:relative}
+.map-phone {display:table-cell; vertical-align:top; padding:15px 30px 18px 30px; background:#fff}
+.map-email {display:table-cell; vertical-align:top; padding:15px 30px 18px 30px; background:#fff}
 .map-email a {color:#393939; background:none; text-decoration:underline}
 .map-email a:hover {text-decoration:none}
 

@@ -321,7 +321,7 @@
                             zoom: 16
                         });
 
-                        var myGeocoder = ymaps.geocode('г. Москва, Садовая-Спасская улица, 21/1');
+                        var myGeocoder = ymaps.geocode('г. Москва, Волгоградский проспект, 35, офис 306');
                         myGeocoder.then(
                             function (res) {
                                 var coords = res.geoObjects.get(0).geometry.getCoordinates();
@@ -335,9 +335,11 @@
                     }
                 </script>
                 <div class="map-inner">
-                    <div class="map-address">Адрес: 107084, г. Москва,<br /><strong>ул. Мясницкая, д. 47, офис 416</strong></div>
-                    <div class="map-phone">Телефон<br />(495) <strong>207-5446, 207-6268</strong></div>
-                    <div class="map-email">E-mail<br /><a href="#"><strong>priznanie2000@mail.ru</strong></a></div>
+                    <div class="map-inner-container">
+                        <div class="map-address">Адрес: 109316, г. Москва,<br /><strong>Волгоградский проспект, 35, офис 306</strong></div>
+                        <div class="map-phone">Телефон<br />+7 (495) <strong>507-00-23</strong></div>
+                        <div class="map-email">E-mail<br /><a href="#"><strong>info@nashimgeroyam.ru</strong></a></div>
+                    </div>
                 </div>
             </div>
             <!-- footer map END -->
