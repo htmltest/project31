@@ -81,7 +81,7 @@ footer {min-width:1000px; width:100%; position:relative; margin-top:-522px}
 #map {height:342px}
 .map-inner {position:absolute; left:50%; top:50%; font-size:18px; line-height:24px}
 .map-inner:after {content:""; display:block; position:absolute; width:54px; height:53px; left:-27px; top:50%; margin-top:-27px; background:url(../images/map-address.png)}
-.map-inner-container {display:table; border-spacing:1px}
+.map-inner-container {display:table; border-spacing:1px; white-space:nowrap}
 .map-address {display:table-cell; vertical-align:top; padding:15px 30px 18px 40px; background:#fff; position:relative}
 .map-phone {display:table-cell; vertical-align:top; padding:15px 30px 18px 30px; background:#fff}
 .map-email {display:table-cell; vertical-align:top; padding:15px 30px 18px 30px; background:#fff}
@@ -134,10 +134,14 @@ footer {min-width:1000px; width:100%; position:relative; margin-top:-522px}
 .about-links a:hover span {background:url(../images/about-link-dots-2.png) repeat-x left bottom}
 .about-links a:active span {background:url(../images/about-link-dots-3.png) repeat-x left bottom}
 
-#registration {height:752px; position:relative; background:url(../images/registration-bg.jpg) no-repeat center top; margin:-24px 0 0 0}
+#registration {height:860px; position:relative; background:url(../images/registration-bg.jpg) no-repeat center top; margin:-24px 0 0 0}
 .reg {width:940px; margin:0 auto}
 .reg-title {text-align:center; line-height:0; padding:189px 0 0 0}
-.reg-text {text-align:center; text-transform:uppercase; color:#fff; font:36px/36px ProximaNovaRegular, sans-serif; padding:29px 0 52px 0; border-bottom:2px solid #fff}
+.reg-text {text-align:center; text-transform:uppercase; color:#fff; font:30px/36px ProximaNovaRegular, sans-serif; padding:27px 0 43px 0}
+.reg-genre-title {text-align:center; font:14px/18px ProximaNovaRegular, sans-serif; text-transform:uppercase; color:#f6150d}
+.reg-genre {text-align:center; color:#fff; padding:8px 0 53px 0}
+.reg-genre span {color:#cd0700; margin:0 4px 0 3px}
+.reg-genre-sep {height:2px; background:#fff; opacity:.1; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=10)}
 .form-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; text-align:center; padding:53px 0 0 0}
 .form-title:before,
 .form-title:after {content:""; display:inline-block; vertical-align:top; width:28px; height:27px; background:url(../images/content-h1.png); margin:2px 19px 0 19px}
@@ -153,7 +157,7 @@ form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .form-submit input:hover {color:#fff; background-position:left -45px}
 .form-submit input:active {background-position:left -90px}
 
-#news {background:#f5f5f5; padding:0 0 57px 0}
+#news {background:#f5f5f5; position:relative; z-index:2; margin:0 0 -36px 0}
 .news-inner {width:960px; margin:0 auto}
 .news-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#000; text-align:center; position:relative; top:-35px; margin-bottom:-35px}
 .news-title:before,
@@ -177,8 +181,8 @@ form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
 #partners {position:relative}
 
-.partners-org {height:468px; background:#080104 url(../images/partners-bg.jpg) no-repeat center top}
-.partners-org-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; text-align:center; padding:71px 0 0 0}
+.partners-org {height:592px; background:#080104 url(../images/partners-bg.jpg) no-repeat center top}
+.partners-org-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; text-align:center; padding:182px 0 0 0}
 .partners-org-title:before,
 .partners-org-title:after {content:""; display:inline-block; vertical-align:top; width:28px; height:27px; background:url(../images/content-h1.png); margin:2px 19px 0 19px}
 .partners-org-list {width:960px; margin:0 auto; padding:58px 0 0 0}
@@ -193,7 +197,7 @@ form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .partners-org-3 {left:37px; top:10px}
 .partners-org-item-name {color:#fff; font:14px/18px ProximaNovaRegular, sans-serif; text-transform:uppercase}
 
-.partners-support {width:960px; margin:0 auto; padding:72px 0 0 0}
+.partners-support {width:960px; margin:0 auto; padding:59px 0 0 0}
 .partners-support-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#000; text-align:center}
 .partners-support-title:before,
 .partners-support-title:after {content:""; display:inline-block; vertical-align:top; width:28px; height:27px; background:url(../images/content-h1.png); margin:2px 19px 0 19px}
@@ -203,9 +207,9 @@ form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
 .partners-info {width:960px; margin:0 auto; padding:66px 0 0 0}
 
-.partners-part {width:960px; margin:0 auto; padding:73px 0 64px 0}
+.partners-part {width:960px; margin:0 auto; padding:73px 0 0 0; position:relative; z-index:2}
 .partners-part img {position:relative; margin-left:10px; margin-right:10px; -moz-border-radius:70px; -webkit-border-radius:70px; border-radius:70px; behavior:url(./js/PIE.htc)}
 
-.partners-welcome {height:217px; background:#080104 url(../images/partners-welcome-bg.jpg) no-repeat center top}
-.partners-link {line-height:0; text-align:center; padding:59px 0 0 0}
+.partners-welcome {height:340px; background:#080104 url(../images/partners-welcome-bg.jpg) no-repeat center top; margin-top:-58px}
+.partners-link {line-height:0; text-align:center; padding:182px 0 0 0}
 .partners-text {font:30px/30px ProximaNovaRegular, sans-serif; text-align:center; color:#fff; text-transform:uppercase; padding:27px 0 0 0}
