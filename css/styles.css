@@ -75,6 +75,10 @@ nav ul li.active a {color:#fff}
 .content-img {line-height:0; margin:59px -80px 18px -80px; text-align:center}
 .content-img-title {font-style:italic; border-bottom:1px solid #f5f5f5; margin:28px 0 18px 0; padding:0 0 27px 0}
 
+.press {background:#fafafa; padding:25px 19px; margin:29px 0 38px 0}
+.press h3 {margin-top:0}
+.press .about-doc {margin-top:16px}
+
 footer {min-width:1000px; width:100%; position:relative; margin-top:-522px}
 
 .footer-map {height:342px; position:relative; width:100%}
@@ -133,6 +137,8 @@ footer {min-width:1000px; width:100%; position:relative; margin-top:-522px}
 .about-links a span {background:url(../images/about-link-dots-1.png) repeat-x left bottom}
 .about-links a:hover span {background:url(../images/about-link-dots-2.png) repeat-x left bottom}
 .about-links a:active span {background:url(../images/about-link-dots-3.png) repeat-x left bottom}
+.about-prize {background:url(../images/about-prize.png) no-repeat left top; font-weight:normal; text-transform:uppercase; color:#000; padding:0 0 0 49px; margin:26px 0 0 0}
+.about-reg {background:url(../images/about-reg.png) no-repeat left top; font-weight:normal; text-transform:uppercase; color:#000; padding:0 0 0 49px; margin:26px 0 0 0}
 
 #registration {height:860px; position:relative; background:url(../images/registration-bg.jpg) no-repeat center top; margin:-24px 0 0 0}
 .reg {width:940px; margin:0 auto}
