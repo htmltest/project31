@@ -187,21 +187,16 @@ form:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 
 #partners {position:relative}
 
-.partners-org {height:592px; background:#080104 url(../images/partners-bg.jpg) no-repeat center top}
+.partners-org {height:552px; background:#080104 url(../images/partners-bg.jpg) no-repeat center top}
 .partners-org-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; text-align:center; padding:182px 0 0 0}
 .partners-org-title:before,
 .partners-org-title:after {content:""; display:inline-block; vertical-align:top; width:28px; height:27px; background:url(../images/content-h1.png); margin:2px 19px 0 19px}
-.partners-org-list {width:960px; margin:0 auto; padding:58px 0 0 0}
-.partners-org-list:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
-.partners-org-item {float:left; width:260px}
-.partners-org-item:first-child {padding:0 0 0 110px}
-.partners-org-item-logo {line-height:0; height:186px}
-.partners-org-item-logo a {background:none}
-.partners-org-item-logo img {position:relative}
-.partners-org-1 {left:-1px}
-.partners-org-2 {left:-3px; top:49px}
-.partners-org-3 {left:37px; top:10px}
-.partners-org-item-name {color:#fff; font:14px/18px ProximaNovaRegular, sans-serif; text-transform:uppercase}
+.partners-org-list {width:960px; margin:0 auto; position:relative}
+.partners-org-subtitle {position:absolute; left:604px; top:65px; width:233px; font:14px/18px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#fff; text-align:center}
+.partners-org-list a {position:absolute; background:none}
+.partners-org-1 {left:142px; top:37px}
+.partners-org-2 {left:526px; top:136px}
+.partners-org-3 {left:771px; top:114px}
 
 .partners-support {width:960px; margin:0 auto; padding:59px 0 0 0}
 .partners-support-title {font:36px/36px ProximaNovaBold, sans-serif; text-transform:uppercase; color:#000; text-align:center}
