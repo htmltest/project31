@@ -62,7 +62,7 @@
         var curHeight = $(window).height() / 2;
         $('nav a').each(function() {
             var curBlock = $(this).attr('href');
-            if ($(curBlock).offset().top < (curScroll + curHeight)) {
+            if ($(curBlock).length > 0 && $(curBlock).offset().top < (curScroll + curHeight)) {
                 $('nav li.active').removeClass('active');
                 $(this).parent().addClass('active');
             }

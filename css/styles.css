@@ -43,7 +43,7 @@ nav ul li.active a {color:#fff}
 .wrapper {min-width:1000px; width:100%; position:relative; min-height:100%; overflow:hidden}
 .wrapper-inner {padding:0 0 522px 0}
 
-.top {height:252px; position:relative; background:url(../images/top-bg.jpg) center top}
+.top {height:252px; position:relative; background:#000 url(../images/top-bg.jpg) center bottom}
 .top-inner {position:absolute; left:50%; bottom:-39px; width:262px; height:61px; margin-left:-131px; background:url(../images/top-inner.png); color:#fff; font-weight:normal; font-family:ProximaNovaRegular, sans-serif; text-transform:uppercase; text-align:center}
 .top-title {font-size:31px; line-height:41px; text-shadow:0 -1px 0 rgba(100, 5, 2, .75)}
 .top-text {font-size:8px; line-height:20px}
