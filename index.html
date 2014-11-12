@@ -10,11 +10,19 @@
 
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,700,700italic&subset=latin,cyrillic" />
         <link rel="stylesheet" href="css/styles.css" />
+        <link rel="stylesheet" href="css/chosen.css" />
 
         <script src="js/jquery-1.11.1.min.js"></script>
         <script src="js/jquery.validate.min.js"></script>
-        <script src="js/jquery.placeholder.1.3.min.js"></script>
         <script src="js/jquery.scrollTo-1.4.3.1-min.js"></script>
+        <script src="js/chosen.jquery.min.js"></script>
+        <script src="js/jquery.fileupload/js/vendor/jquery.ui.widget.js"></script>
+        <script src="js/jquery.fileupload/js/tmpl.min.js"></script>
+        <script src="js/jquery.fileupload/js/jquery.iframe-transport.js"></script>
+        <script src="js/jquery.fileupload/js/jquery.fileupload.js"></script>
+        <script src="js/jquery.fileupload/js/jquery.fileupload-process.js"></script>
+        <script src="js/jquery.fileupload/js/jquery.fileupload-validate.js"></script>
+        <script src="js/jquery.fileupload/js/jquery.fileupload-ui.js"></script>
         <script src="js/tools.js"></script>
 
         <meta name="viewport" content="width=1024" />
@@ -105,11 +113,116 @@
                             Соул <span>/</span>
                             Смешанные жанры - фьюжн.
                         </div>
-                        <div class="reg-genre-sep"></div>
                         <div class="form-title">Регистрация на проекте</div>
-                        <form action="#" method="post">
-                            <div class="form-input"><input type="text" name="name" value="" class="required" placeholder="Ваше ФИО" /></div>
-                            <div class="form-input"><input type="text" name="email" value="" class="required email" placeholder="Ваш e-mail" /></div>
+                        <form action="#" method="post" class="fileupload" enctype="multipart/form-data">
+                            <fieldset>
+                                <legend>Информация об участнике / коллективе</legend>
+                                <div class="reg-fieldset-1">
+                                    <div class="form-row">
+                                        <div class="form-input"><span>ФИО / Название коллектива <em>*</em></span><input type="text" name="name" value="" class="required" /></div>
+                                        <div class="form-select">
+                                            <select name="genre" data-placeholder="Выберите жанр *">
+                                                <option value=""></option>
+                                                <option value="1">Классика</option>
+                                                <option value="2">Рок</option>
+                                                <option value="3">Поп</option>
+                                                <option value="4">Рэп</option>
+                                                <option value="5">Кавер</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-input form-input-2"><span>Ваша страна</span><input type="text" name="country" value="" /></div>
+                                        <div class="form-input form-input-3"><span>Город, который представляете</span><input type="text" name="city" value="" /></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-input form-input-4"><span>Электронная почта <em>*</em></span><input type="text" name="email" value="" class="required email" /></div>
+                                        <div class="form-input form-input-5"><span>Телефон</span><input type="text" name="phone" value="" /></div>
+                                    </div>
+                                    <div class="form-row">
+                                        <div class="form-input form-input-6"><span>Текст о себе</span><textarea name="about" rows="5" cols="10"/></textarea></div>
+                                    </div>
+                                    <div class="form-subtitle">Фотографии</div>
+                                    <div class="files-list">
+                                        <table role="presentation">
+                                            <tbody class="files">
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="window-import-link">
+                                        <div class="fileinput-button">
+                                            <span>Загрузить еще</span>
+                                            <input type="file" name="files[]" multiple />
+                                        </div>
+                                    </div>
+
+                                    <!-- The template to display files available for upload -->
+                                    <script id="template-upload" type="text/x-tmpl">
+                                        {% for (var i=0, file; file=o.files[i]; i++) { %}
+                                            <tr class="template-download fade">
+                                                <td><div class="files-item-name"><div class="progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" style="width:0"></div></div><span>{%=file.name%}</span></div></td>
+                                                <td>
+                                                    {% if (!i) { %}
+                                                    <button class="cancel files-item-stop"></button>
+                                                    {% } %}
+                                                    <div class="files-item-error error"></div>
+                                                </td>
+                                            </tr>
+                                        {% } %}
+                                    </script>
+
+                                    <!-- The template to display files available for download -->
+                                    <script id="template-download" type="text/x-tmpl">
+                                        {% for (var i=0, file; file=o.files[i]; i++) { %}
+                                            <tr class="template-download fade">
+                                                <td><div class="files-item-name"><span>{%=file.name%}</span></div></td>
+                                                <td>
+                                                    {% if (file.deleteUrl) { %}
+                                                        <button class="delete files-item-del" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}></button>
+                                                    {% } %}
+
+                                                    {% if (file.error) { %}
+                                                        <div class="files-item-error">— загрузка файла не удалась из-за <span>{%=file.error%}</span></div>
+                                                    {% } %}
+                                                </td>
+                                            </tr>
+                                        {% } %}
+                                    </script>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend>Файлы для заявки</legend>
+                                <div class="reg-fieldset-2-cols">
+                                    <div class="reg-fieldset-2-col-1">
+                                        <div class="form-subtitle">Аудиофайл <span>*</span></div>
+                                        <div class="form-filelink">
+                                            <div class="form-filelink-value"><span></span><strong></strong></div>
+                                            <div class="form-filelink-top">
+                                                <div class="form-input"><input type="text" name="url1" value="http://" /></div>
+                                                <div class="form-filelink-top-or">или</div>
+                                                <div class="form-filelink-top-file"><span rel="Загрузить заново" rev="Загрузить файл">Загрузить файл</span><input type="file" name="file1" value=""></div>
+                                                <div class="form-filelink-top-url">&nbsp;/ <span>Вставить ссылку</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="reg-fieldset-2-col-2">
+                                        <div class="form-subtitle">Видеофайл <span>*</span></div>
+                                        <div class="form-filelink">
+                                            <div class="form-filelink-value"><span></span><strong></strong></div>
+                                            <div class="form-filelink-top">
+                                                <div class="form-input"><input type="text" name="url1" value="http://" /></div>
+                                                <div class="form-filelink-top-or">или</div>
+                                                <div class="form-filelink-top-file"><span rel="Загрузить заново" rev="Загрузить файл">Загрузить файл</span><input type="file" name="file1" value=""></div>
+                                                <div class="form-filelink-top-url">&nbsp;/ <span>Вставить ссылку</span></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <div class="form-bottom">
+                                <div class="form-checkbox"><span><input type="checkbox" name="rules" checked="checked required" /></span>Согласен/на с передачей прав на использование и воспроизведение произведения</div>
+                                <div class="form-hint"><span>*</span> — поля, обязательные для заполнения</div>
+                            </div>
                             <div class="form-submit"><input type="submit" value="Зарегистрироваться" /></div>
                         </form>
                     </div>
@@ -119,7 +232,7 @@
                 <!-- news -->
                 <section id="news">
                     <div class="news-inner">
-                        <div class="news-title">Регистрация на проекте</div>
+                        <div class="news-title">Новости проекта</div>
                         <div class="news-slider">
                             <ul>
                                 <li>

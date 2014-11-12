@@ -9,7 +9,53 @@
             }
         });
 
-        $.Placeholder.init({color : '#393939'});
+        // подсказки
+        $('.form-input input, .form-input textarea').each(function() {
+            if ($(this).val() == '') {
+                $(this).parent().find('span').css({'display': 'block'});
+            }
+        });
+
+        $('.form-input input, .form-input textarea').focus(function() {
+            $(this).parent().find('span').css({'display': 'none'});
+        });
+
+        $('.form-input input, .form-input textarea').blur(function() {
+            if ($(this).val() == '') {
+                $(this).parent().find('span').css({'display': 'block'});
+            }
+        });
+
+        $('.form-select select').chosen({disable_search: true});
+
+        $('.fileupload').fileupload({
+            url: 'js/jquery.fileupload/server/php/',
+            acceptFileTypes: /(\.|\/)(jpg)$/i,
+            autoUpload: true
+        });
+
+        $('.form-filelink-top-file input').unbind('change').bind('change', function() {
+            var curBlock = $(this).parents().filter('.form-filelink');
+            curBlock.find('.form-filelink-value span').html($(this).val());
+            curBlock.find('.form-input, .form-filelink-top-or').hide();
+            curBlock.find('.form-filelink-value, .form-filelink-top-url').show();
+            curBlock.find('.form-filelink-top-file span').html(curBlock.find('.form-filelink-top-file span').attr('rel'));
+        });
+
+        $('.form-filelink-value strong, .form-filelink-top-url span').click(function() {
+            var curBlock = $(this).parents().filter('.form-filelink');
+            curBlock.find('.form-filelink-top-file input').val('');
+            curBlock.find('.form-filelink-value span').html($(this).val());
+            curBlock.find('.form-input, .form-filelink-top-or').show();
+            curBlock.find('.form-filelink-value, .form-filelink-top-url').hide();
+            curBlock.find('.form-filelink-top-file span').html(curBlock.find('.form-filelink-top-file span').attr('rev'));
+        });
+
+        $('.form-checkbox span input:checked').parent().addClass('checked');
+        $('.form-checkbox').click(function() {
+            $(this).find('span').toggleClass('checked');
+            $(this).find('input').prop('checked', $(this).find('span').hasClass('checked')).trigger('change');
+        });
 
         $('form').validate();
 
