@@ -114,7 +114,7 @@
                             Смешанные жанры - фьюжн.
                         </div>
                         <div class="form-title">Регистрация на проекте</div>
-                        <form action="#" method="post" class="fileupload" enctype="multipart/form-data">
+                        <form action="#" method="post" enctype="multipart/form-data">
                             <fieldset>
                                 <legend>Информация об участнике / коллективе</legend>
                                 <div class="reg-fieldset-1">
@@ -142,17 +142,19 @@
                                     <div class="form-row">
                                         <div class="form-input form-input-6"><span>Текст о себе</span><textarea name="about" rows="5" cols="10"/></textarea></div>
                                     </div>
-                                    <div class="form-subtitle">Фотографии</div>
-                                    <div class="files-list">
-                                        <table role="presentation">
-                                            <tbody class="files">
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="window-import-link">
-                                        <div class="fileinput-button">
-                                            <span>Загрузить еще</span>
-                                            <input type="file" name="files[]" multiple />
+                                    <div class="form-subtitle">Фотографии <em>(jpg)</em></div>
+                                    <div id="fileupload-foto">
+                                        <div class="files-list">
+                                            <table role="presentation">
+                                                <tbody class="files">
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="window-import-link">
+                                            <div class="fileinput-button">
+                                                <span>Загрузить еще</span>
+                                                <input type="file" name="files[]" />
+                                            </div>
                                         </div>
                                     </div>
 
@@ -194,26 +196,48 @@
                                 <legend>Файлы для заявки</legend>
                                 <div class="reg-fieldset-2-cols">
                                     <div class="reg-fieldset-2-col-1">
-                                        <div class="form-subtitle">Аудиофайл <span>*</span></div>
-                                        <div class="form-filelink">
-                                            <div class="form-filelink-value"><span></span><strong></strong></div>
+                                        <div class="form-subtitle">Аудиофайл <em>(mp3/wav)</em> <span>*</span></div>
+                                        <div class="form-filelink" id="fileupload-audio">
+                                            <div class="files-list">
+                                                <table role="presentation">
+                                                    <tbody class="files">
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                             <div class="form-filelink-top">
                                                 <div class="form-input"><input type="text" name="url1" value="http://" /></div>
                                                 <div class="form-filelink-top-or">или</div>
-                                                <div class="form-filelink-top-file"><span rel="Загрузить заново" rev="Загрузить файл">Загрузить файл</span><input type="file" name="file1" value=""></div>
-                                                <div class="form-filelink-top-url">&nbsp;/ <span>Вставить ссылку</span></div>
+                                                <div class="form-filelink-top-file">
+                                                    <div class="window-import-link">
+                                                        <div class="fileinput-button">
+                                                            <span>Загрузить файл</span>
+                                                            <input type="file" name="files[]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="reg-fieldset-2-col-2">
-                                        <div class="form-subtitle">Видеофайл <span>*</span></div>
-                                        <div class="form-filelink">
-                                            <div class="form-filelink-value"><span></span><strong></strong></div>
+                                        <div class="form-subtitle">Видеофайл <em>(mp4/avi)</em> <span>*</span></div>
+                                        <div class="form-filelink" id="fileupload-video">
+                                            <div class="files-list">
+                                                <table role="presentation">
+                                                    <tbody class="files">
+                                                    </tbody>
+                                                </table>
+                                            </div>
                                             <div class="form-filelink-top">
-                                                <div class="form-input"><input type="text" name="url1" value="http://" /></div>
+                                                <div class="form-input"><input type="text" name="url2" value="http://" /></div>
                                                 <div class="form-filelink-top-or">или</div>
-                                                <div class="form-filelink-top-file"><span rel="Загрузить заново" rev="Загрузить файл">Загрузить файл</span><input type="file" name="file1" value=""></div>
-                                                <div class="form-filelink-top-url">&nbsp;/ <span>Вставить ссылку</span></div>
+                                                <div class="form-filelink-top-file">
+                                                    <div class="window-import-link">
+                                                        <div class="fileinput-button">
+                                                            <span>Загрузить файл</span>
+                                                            <input type="file" name="files[]" />
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>

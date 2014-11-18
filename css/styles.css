@@ -178,10 +178,12 @@ legend {position:absolute; left:6px; top:-10px; background:#fff; color:#d4d3d3; 
 .form-select select {width:100%}
 .form-subtitle {font-size:18px; line-height:18px; font-weight:bold; color:#000; padding:3px 0 0 0; margin:0 0 18px 0}
 .form-subtitle span {font-weight:normal; color:#ea0c04}
+.form-subtitle em {font-style:normal; font-weight:normal; color:#d4d3d3}
 .form-submit {text-align:center; padding:37px 0 0 0}
 .form-submit input {vertical-align:top; width:460px; height:53px; border:none; cursor:pointer; margin:0; padding:0; outline:none; background:url(../images/submit.png); font:24px/53px ProximaNovaRegular, sans-serif; color:#000; -webkit-appearance:none}
 .form-submit input:hover {color:#fff; background-position:left -53px}
 .form-submit input:active {background-position:left -106px}
+form.disabled .form-submit {opacity:.5; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=50); cursor:default}
 
 .window-import-link {width:100%; height:20px; position:relative; overflow:hidden}
 .window-import-link:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
@@ -219,15 +221,7 @@ legend {position:absolute; left:6px; top:-10px; background:#fff; color:#d4d3d3; 
 .form-filelink-top:after {content:"."; display:block; clear:both; visibility:hidden; height:0}
 .form-filelink-top .form-input input {width:200px; padding:4px 10px 5px 10px; height:18px; font-size:14px; line-height:18px}
 .form-filelink-top-or {float:left; padding:0 10px 0 14px; line-height:27px}
-.form-filelink-top-file {float:left; font-weight:bold; line-height:27px; overflow:hidden; position:relative}
-.form-filelink-top-file span {color:#ea0800; background:url(../images/dots-1.png) repeat-x left bottom}
-.form-filelink-top-file:hover span {background:none}
-.form-filelink-top-file input {height:200px; position:absolute; top:0; right:0; opacity:0; filter:progid:DXImageTransform.Microsoft.Alpha(opacity=0); cursor:pointer; font-size:200px; background:url(../images/blank.gif); z-index:2}
-.form-filelink-value {line-height:19px; display:none; padding:0 0 14px 0}
-.form-filelink-value strong {vertical-align:middle; width:19px; height:19px; background:url(../images/file-del.png); cursor:pointer; display:inline-block; margin:0 0 0 10px}
-.form-filelink-top-url {float:left; line-height:27px; display:none}
-.form-filelink-top-url span {color:#ea0800; background:url(../images/dots-1.png) repeat-x left bottom; font-weight:bold; cursor:pointer}
-.form-filelink-top-url span:hover {background:none}
+.form-filelink-top-file {float:left; padding:5px 0 0 0; position:relative}
 
 #news {background:#f5f5f5 url(../images/news-bg.png) no-repeat center top; position:relative; z-index:2; margin:0 0 -36px 0; padding:83px 0 0 0}
 .news-inner {width:960px; margin:0 auto}

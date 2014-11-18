@@ -28,36 +28,64 @@
 
         $('.form-select select').chosen({disable_search: true});
 
-        $('.fileupload').fileupload({
+        $('#fileupload-foto').fileupload({
             url: 'js/jquery.fileupload/server/php/',
             acceptFileTypes: /(\.|\/)(jpg)$/i,
-            autoUpload: true
+            autoUpload: true,
+            start: function() {
+                $('#registration form').addClass('disabled');
+            },
+            stop: function() {
+                $('#registration form').removeClass('disabled');
+            }
         });
 
-        $('.form-filelink-top-file input').unbind('change').bind('change', function() {
-            var curBlock = $(this).parents().filter('.form-filelink');
-            curBlock.find('.form-filelink-value span').html($(this).val());
-            curBlock.find('.form-input, .form-filelink-top-or').hide();
-            curBlock.find('.form-filelink-value, .form-filelink-top-url').show();
-            curBlock.find('.form-filelink-top-file span').html(curBlock.find('.form-filelink-top-file span').attr('rel'));
+        $('#fileupload-audio').fileupload({
+            url: 'js/jquery.fileupload/server/php/',
+            acceptFileTypes: /(\.|\/)(mp3|wav)$/i,
+            autoUpload: true,
+            start: function() {
+                $('#registration form').addClass('disabled');
+            },
+            stop: function() {
+                $('#registration form').removeClass('disabled');
+            }
         });
 
-        $('.form-filelink-value strong, .form-filelink-top-url span').click(function() {
-            var curBlock = $(this).parents().filter('.form-filelink');
-            curBlock.find('.form-filelink-top-file input').val('');
-            curBlock.find('.form-filelink-value span').html($(this).val());
-            curBlock.find('.form-input, .form-filelink-top-or').show();
-            curBlock.find('.form-filelink-value, .form-filelink-top-url').hide();
-            curBlock.find('.form-filelink-top-file span').html(curBlock.find('.form-filelink-top-file span').attr('rev'));
+        $('#fileupload-video').fileupload({
+            url: 'js/jquery.fileupload/server/php/',
+            acceptFileTypes: /(\.|\/)(mp4|avi)$/i,
+            autoUpload: true,
+            start: function() {
+                $('#registration form').addClass('disabled');
+            },
+            stop: function() {
+                $('#registration form').removeClass('disabled');
+            }
         });
 
         $('.form-checkbox span input:checked').parent().addClass('checked');
         $('.form-checkbox').click(function() {
             $(this).find('span').toggleClass('checked');
             $(this).find('input').prop('checked', $(this).find('span').hasClass('checked')).trigger('change');
+            if ($(this).find('span').hasClass('checked')) {
+                $('#registration form').removeClass('disabled');
+            } else {
+                $('#registration form').addClass('disabled');
+            }
         });
 
-        $('form').validate();
+        $('form').validate({
+            submitHandler: function(form) {
+                if (!$('#registration form').hasClass('disabled')) {
+                    // форму можно отправить
+                    alert('Форма отправлена');
+                } else {
+                    // форму не отправляем
+                    alert('Форма не отправлена');
+                }
+            }
+        });
 
         $('.news-slider').each(function() {
             var curSlider = $(this);
